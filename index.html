@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    	<link href='http://fonts.googleapis.com/css?family=Arvo:400italic,700' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    	<link rel="stylesheet" type="text/css" href="app_plugins/slick.css"/>
+    	<link href="app_styles/style.css" rel="stylesheet"/>
+
+		<title>My Favourite Grocery</title>
+	</head>
+
+	<body ng-app="mobAppPage" ng-controller='tabController as tab'>
+
+		<header>
+			<div class="pageHeader">
+			<h1>My Favourite Grocery - Mobile App!</h1>
+			<nav>
+				<ul>
+					<li><a href='' ng-click='tab.setTab(1)' class='button'>Main</a></li>
+					<li><a href='' ng-click='tab.setTab(2)' class='button'>Description</a></li>
+					<li><a href='' ng-click="tab.setTab(3); tab.notifySupport()" class='button'>Support</a></li>
+				</ul>
+			</nav>
+			</div>
+			<h3>Find the best weekly grocery deals in your area!</h3>
+		</header>
+
+		<main>
+			<features ng-show='tab.isSet(1)'></features>
+			<description ng-show='tab.isSet(2)'></description>
+			<support ng-show='tab.isSet(3)'></support>
+		</main>
+
+
+		<script src="app_plugins/jquery.min.js"></script>
+		<script src="app_plugins/angular.min.js"></script>
+		
+		<script type="text/javascript" src="app_plugins/slick.min.js"></script>
+
+		<script src="script.js"></script>
+
+	</body>
+
+</html>
